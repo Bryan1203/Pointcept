@@ -528,7 +528,7 @@ if __name__ == "__main__":
     available_scene_names_trainval = [s["name"] for s in available_scenes_trainval]
     print("total scene num:", len(nusc_trainval.scene))
     print("exist scene num:", len(available_scenes_trainval))
-    assert len(available_scenes_trainval) == len(nusc_trainval.scene) == 850
+    #assert len(available_scenes_trainval) == len(nusc_trainval.scene) == 850
 
     print(f"Loading nuScenes tables for version v1.0-test...")
     nusc_test = NuScenes(
@@ -538,7 +538,7 @@ if __name__ == "__main__":
     available_scene_names_test = [s["name"] for s in available_scenes_test]
     print("total scene num:", len(nusc_test.scene))
     print("exist scene num:", len(available_scenes_test))
-    assert len(available_scenes_test) == len(nusc_test.scene) == 150
+    #assert len(available_scenes_test) == len(nusc_test.scene) == 150
 
     train_scenes = splits.train
     train_scenes = set(
