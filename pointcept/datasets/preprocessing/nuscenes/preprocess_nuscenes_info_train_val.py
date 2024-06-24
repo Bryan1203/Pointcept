@@ -530,12 +530,14 @@ if __name__ == "__main__":
     print("exist scene num:", len(available_scenes))
 
     train_scenes = splits.train
+    available_train_scenes = list(set(train_scenes) & set(available_scene_names))
     train_scenes = set(
         [
-            available_scenes[available_scene_names.index(s)]["token"]
-            for s in train_scenes
+            s["token"] for s in available_scenes if s["name"] in available_train_scenes
         ]
     )
+
+    print(f"Number of train scenes: {len(train_scenes)}")
 
     print(f"Filling trainval information...")
     train_nusc_infos, val_nusc_infos = fill_trainval_infos(
