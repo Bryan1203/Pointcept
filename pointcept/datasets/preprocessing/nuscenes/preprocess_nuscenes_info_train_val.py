@@ -522,7 +522,7 @@ if __name__ == "__main__":
 
     print(f"Loading nuScenes tables for version v1.0-trainval...")
     nusc = NuScenes(
-        version="v1.0-trainval", dataroot=config.dataset_root, verbose=False
+        version="v1.0-mini", dataroot=config.dataset_root, verbose=False
     )
     available_scenes = get_available_scenes(nusc)
     available_scene_names = [s["name"] for s in available_scenes]
